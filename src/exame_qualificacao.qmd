@@ -1,0 +1,203 @@
+---
+lang: pt-BR
+format:
+  pdf:
+    pdf-engine: xelatex
+    include-in-header:
+      - file: pre_textuais.tex
+      - text: |
+          \usepackage{indentfirst}
+          \usepackage{microtype}
+          % ==========================
+          % DADOS EDITÁVEIS DO EXAME
+          % Edite apenas o texto entre chaves.
+          % Não altere os nomes dos comandos.
+          % Exemplo: troque "Nome Completo do Discente"
+          % pelo nome real do discente.
+          %
+          % Se não houver subtítulo ou coorientador(a),
+          % deixe o campo vazio entre chaves.
+          %
+          % Evite usar os caracteres %, &, # e _
+          % nesses campos editáveis.
+          % ==========================
+          \newcommand{\InstituicaoExameQualificacao}{Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais}
+          \newcommand{\CampusExameQualificacao}{Campus Formiga}
+          \newcommand{\ProgramaExameQualificacao}{Mestrado Profissional em Administração}
+          \newcommand{\NomeAutorExameQualificacao}{Nome Completo do Discente}
+          \newcommand{\TituloExameQualificacao}{Título do Projeto de Pesquisa}
+          \newcommand{\SubtituloExameQualificacao}{}
+          \newcommand{\CidadeExameQualificacao}{Formiga}
+          \newcommand{\EstadoExameQualificacao}{MG}
+          \newcommand{\AnoExameQualificacao}{2026}
+          \newcommand{\OrientadorExameQualificacao}{Prof. Dr. Nome Completo do Orientador}
+          \newcommand{\CoorientadorExameQualificacao}{}
+          \newcommand{\LinhaPesquisaExameQualificacao}{Finanças Corporativas e Investimentos}
+          \newcommand{\PalavrasChaveExameQualificacao}{palavra-chave 1; palavra-chave 2; palavra-chave 3.}
+          \newcommand{\TextoApresentacaoExameQualificacao}{Projeto de pesquisa apresentado ao Programa de Pós-Graduação em Administração do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais (IFMG) -- Campus Formiga, como requisito para o Exame de Qualificação do Mestrado Profissional em Administração.}
+    documentclass: report
+    papersize: a4
+    geometry:
+      - top = 3cm
+      - bottom = 2cm
+      - left = 3cm
+      - right = 2cm
+    fontsize: 12pt
+    linestretch: 1.25
+    indent: true
+    toc: false
+    number-sections: true
+    fig-dpi: 300
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    link-citations: true
+execute:
+  echo: false
+  warning: false
+  message: false
+crossref:
+  fig-prefix: "Fig."
+  tbl-prefix: "Tab."
+bibliography: referencias.bib
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+editor: source
+---
+
+<!--
+Edite primeiro os campos do bloco "DADOS EDITÁVEIS DO EXAME" no topo deste arquivo.
+Na maior parte do tempo, você precisará alterar apenas este arquivo.
+-->
+
+\pagenumbering{gobble}
+
+\capaExameQualificacao
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{empty}
+
+\folhaDeRostoExameQualificacao
+
+\begin{resumoExameQualificacao}
+
+Escreva aqui o resumo do projeto.
+
+\end{resumoExameQualificacao}
+
+<!--
+Listas opcionais.
+Descomente as linhas abaixo apenas se houver figuras ou tabelas no projeto.
+-->
+
+<!--
+\inserirListaDeFigurasExameQualificacao
+
+\inserirListaDeTabelasExameQualificacao
+-->
+
+\inserirSumarioExameQualificacao
+
+\clearpage
+\pagestyle{textualexamequalificacao}
+
+
+
+<!--
+Escreva abaixo o texto do projeto de pesquisa.
+-->
+
+
+
+# Introdução {#sec-introducao}
+
+
+
+## Problema de pesquisa {#sec-problema}
+
+
+
+## Objetivo geral {#sec-objgeral}
+
+
+
+## Objetivos específicos {#sec-objespecificos}
+
+
+
+
+## Justificativa {#sec-justificativa}
+
+
+
+
+
+# Revisão da Literatura {#sec-revisao}
+
+
+## Lacuna de Pesquisa {#sec-lacuna}
+
+
+
+
+
+# Metodologia {#sec-metodologia}
+
+
+
+
+
+# Resultados Esperados {#sec-esperados}
+
+
+## Produto Bibliográfico {#sec-artigo}
+
+
+
+## Produto Técnico/Tecnológico {#sec-tecnico}
+
+
+
+## Impactos Esperados {#sec-impactos}
+
+
+
+
+
+
+# Cronograma {#sec-cronograma}
+
+Substitua a tabela abaixo pelo cronograma do seu projeto.
+
+| Etapa | Início | Fim |
+|---|---|---|
+| Revisão da literatura | ago./2026 | out./2026 |
+| Definição final da base ou campo de pesquisa | set./2026 | nov./2026 |
+| Coleta e organização dos dados | nov./2026 | jan./2027 |
+| Análise dos dados | fev./2027 | abr./2027 |
+| Redação dos resultados | abr./2027 | jun./2027 |
+| Ajustes finais e preparação da defesa | jul./2027 | ago./2027 |
+
+
+
+
+
+# Referências {#sec-referencias .unnumbered}
+
+::: {#refs}
+:::
+
+
+
+<!--
+Pós-textuais opcionais:
+
+\appendix
+
+# Título do Apêndice
+
+Se necessário, descomente esta seção para apresentar materiais complementares
+produzidos pelo autor.
+
+Se não houver apêndice, mantenha este bloco comentado.
+-->

@@ -1,0 +1,32 @@
+
+# Arquivos de sistema do Windows
+Thumbs.db
+Desktop.ini
+
+# Arquivos de sistema do MacOS
+.DS_Store
+
+# Arquivos do RStudio
+*.Rproj
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Arquivos temporários R
+*_cache/
+/cache/
+
+# Arquivos de saída
+*.pdf
+*.html
+*.log
+*.tex
+*.knit.md
+
+
+# Arquivos temporários
+*~
+.~lock.*
+*.tmp
+*.bak

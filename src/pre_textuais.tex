@@ -1,0 +1,165 @@
+% ==========================
+% pre_textuais.tex
+% Camada LaTeX reutilizavel do template de qualificacao.
+% ==========================
+
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+
+\AddToHook{begindocument/end}{%
+  \renewcommand{\contentsname}{Sumário}%
+  \renewcommand{\listfigurename}{Lista de Figuras}%
+  \renewcommand{\listtablename}{Lista de Tabelas}%
+}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries}
+  {\thechapter}
+  {1em}
+  {}
+
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\huge\bfseries\centering}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\fancypagestyle{textualexamequalificacao}{%
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\newcommand{\imprimirSubtituloNaCapaSeInformado}{%
+  \ifdefempty{\SubtituloExameQualificacao}{}{\\[0.5cm]\normalsize \SubtituloExameQualificacao}%
+}
+
+\newcommand{\imprimirSubtituloNaFolhaDeRostoSeInformado}{%
+  \ifdefempty{\SubtituloExameQualificacao}{}{\\[0.5cm]\normalsize \SubtituloExameQualificacao}%
+}
+
+\newcommand{\imprimirCoorientadorSeInformado}{%
+  \ifdefempty{\CoorientadorExameQualificacao}{}{Coorientador(a): \CoorientadorExameQualificacao\\}%
+}
+
+\newenvironment{resumoExameQualificacao}{
+  \clearpage
+  \begingroup
+  \thispagestyle{empty}
+  \singlespacing
+  \small
+  \vspace*{-1cm}
+  \begin{center}
+    \bfseries RESUMO
+
+    \vspace{0.5em}
+  \end{center}
+  \begin{quote}
+  \justifying
+}{
+  \end{quote}
+  \vspace{-1.1em}
+  \begin{center}
+  \begin{minipage}{0.87\textwidth}
+  \textbf{Palavras-chave:} \PalavrasChaveExameQualificacao
+  \end{minipage}
+  \end{center}
+  \clearpage
+  \endgroup
+}
+
+\newcommand{\capaExameQualificacao}{%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \small
+    \textbf{\InstituicaoExameQualificacao}\\
+    \textbf{\CampusExameQualificacao}\\
+    \textbf{\ProgramaExameQualificacao}
+
+    \vspace*{4cm}
+    \normalsize \textbf{\NomeAutorExameQualificacao}
+
+    \vspace*{5cm}
+    \large \textbf{\MakeUppercase{\TituloExameQualificacao}}
+    \imprimirSubtituloNaCapaSeInformado
+
+    \vfill
+    \normalsize \textbf{\CidadeExameQualificacao, \EstadoExameQualificacao}\\
+    \textbf{\AnoExameQualificacao}
+  \end{center}
+  \end{titlepage}
+}
+
+\newcommand{\folhaDeRostoExameQualificacao}{%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{2cm}
+    \normalsize \textbf{\MakeUppercase{\NomeAutorExameQualificacao}}
+
+    \vspace*{4cm}
+    \large \textbf{\TituloExameQualificacao}
+    \imprimirSubtituloNaFolhaDeRostoSeInformado
+
+    \vspace*{2cm}
+    \begin{flushright}
+    \begin{minipage}{0.6\textwidth}
+    \small
+    \justifying
+    \TextoApresentacaoExameQualificacao
+    \end{minipage}
+    \end{flushright}
+
+    \vspace{0.8cm}
+    \begin{flushright}
+    \small
+    Orientador(a): \OrientadorExameQualificacao\\
+    \imprimirCoorientadorSeInformado
+    Linha de pesquisa: \LinhaPesquisaExameQualificacao
+    \end{flushright}
+
+    \vfill
+    \CidadeExameQualificacao, \EstadoExameQualificacao\\
+    \AnoExameQualificacao
+  \end{center}
+  \end{titlepage}
+}
+
+\newcommand{\inserirListaDeFigurasExameQualificacao}{%
+  \clearpage
+  \listoffigures
+  \thispagestyle{empty}
+  \clearpage
+}
+
+\newcommand{\inserirListaDeTabelasExameQualificacao}{%
+  \clearpage
+  \listoftables
+  \thispagestyle{empty}
+  \clearpage
+}
+
+\newcommand{\inserirSumarioExameQualificacao}{%
+  \clearpage
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+  \thispagestyle{empty}
+  \clearpage
+}
