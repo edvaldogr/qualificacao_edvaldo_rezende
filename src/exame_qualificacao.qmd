@@ -24,14 +24,14 @@ format:
           \newcommand{\InstituicaoExameQualificacao}{Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais}
           \newcommand{\CampusExameQualificacao}{Campus Formiga}
           \newcommand{\ProgramaExameQualificacao}{Mestrado Profissional em Administração}
-          \newcommand{\NomeAutorExameQualificacao}{Nome Completo do Discente}
+          \newcommand{\NomeAutorExameQualificacao}{Edvaldo Garcia Rezende}
           \newcommand{\TituloExameQualificacao}{Título do Projeto de Pesquisa}
           \newcommand{\SubtituloExameQualificacao}{}
           \newcommand{\CidadeExameQualificacao}{Formiga}
           \newcommand{\EstadoExameQualificacao}{MG}
           \newcommand{\AnoExameQualificacao}{2026}
-          \newcommand{\OrientadorExameQualificacao}{Prof. Dr. Nome Completo do Orientador}
-          \newcommand{\CoorientadorExameQualificacao}{}
+          \newcommand{\OrientadorExameQualificacao}{Prof. Dr. Washington Santos Silva}
+          \newcommand{\CoorientadorExameQualificacao}{Prof. Dr. Lelis Pedro de Andrade }
           \newcommand{\LinhaPesquisaExameQualificacao}{Finanças Corporativas e Investimentos}
           \newcommand{\PalavrasChaveExameQualificacao}{palavra-chave 1; palavra-chave 2; palavra-chave 3.}
           \newcommand{\TextoApresentacaoExameQualificacao}{Projeto de pesquisa apresentado ao Programa de Pós-Graduação em Administração do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais (IFMG) -- Campus Formiga, como requisito para o Exame de Qualificação do Mestrado Profissional em Administração.}
