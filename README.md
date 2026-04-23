@@ -95,7 +95,7 @@ o processo de orientação.
 | :--- | :--- |
 | 09/04/2026 | Configuração inicial do repositório e ajuste do motor de renderização PDF. |
 | 10/04/2026 | Reestruturação da documentação README.md para acompanhamento do projeto. |
-
+| 23/04/2026 | Elaboração dos arquivos para a apresentação da disciplina de Seminários de Qualificação |
 
 ### Datas das apresentações da disciplina de Seminários de Qualificação
 | Data | | Hora | Descrição do Escopo da Apresentação |

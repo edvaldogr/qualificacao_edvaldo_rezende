@@ -1,0 +1,82 @@
+/* 1. Barras Superior e Inferior (Mantido) */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #1a8a42;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+}
+
+.reveal .footer {
+    background-color: #1a8a42 !important;
+    color: white !important;
+    width: 100% !important;
+    height: 50px !important;
+    position: fixed !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.55em !important;
+    z-index: 10;
+}
+
+/* 2. Ajuste de Margens e Tabelas */
+.reveal .slides {
+    margin-top: 60px !important; 
+}
+
+/* Força a tabela a ocupar a largura total do slide */
+.reveal table {
+    width: 100% !important;
+    border-collapse: collapse;
+    font-size: 0.75em !important; 
+}
+
+/* Estilo específico para as células */
+.reveal table th, .reveal table td {
+    padding: 10px !important;
+    white-space: nowrap; 
+}
+
+/* 3. Estilo da Capa Manual */
+.capa-conteudo {
+    text-align: center;
+    padding-top: 80px !important;
+}
+
+.capa-conteudo h1 {
+    font-size: 1.6em !important;
+    color: #1a8a42 !important;
+    margin-bottom: 20px !important;
+}
+
+.capa-conteudo h3 {
+    font-size: 1.1em !important;
+    color: #444 !important;
+}
+
+/* 4. Cores e Títulos */
+.reveal h2 {
+    color: #1a8a42 !important;
+}
+
+/* 5. Número do Slide */
+.reveal .slide-number {
+    color: white !important;
+    background-color: transparent !important;
+    bottom: 15px !important;
+    right: 20px !important;
+}

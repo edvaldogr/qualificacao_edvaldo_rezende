@@ -1,0 +1,193 @@
+---
+title: "Análise de desempenho de Carteiras sob a ótica ESG na B3"
+subtitle: "Uma abordagem via Modelo de 5 fatores de Fama-French"
+author: "Edvaldo Garcia Rezende"
+institute: "IFMG - Mestrado Profissional em Administração"
+date: "2026-04-23"
+date-format: "DD/MM/YYYY"
+lang: pt
+format: 
+  beamer:
+    theme: Madrid
+    navigation: horizontal
+    header-includes: |
+       \usepackage{tikz}
+       \usepackage{tabularx}
+       \definecolor{ifmggreen}{RGB}{26, 138, 66}
+       
+       % Forçar a data no formato brasileiro via LaTeX (Sobrescreve o Quarto)
+       \date{23/04/2026}
+       
+       % 1. Ajuste de Cores (Capa e Títulos)
+       \setbeamercolor{palette primary}{bg=ifmggreen, fg=white}
+       \setbeamercolor{palette secondary}{bg=ifmggreen, fg=white}
+       \setbeamercolor{palette tertiary}{bg=ifmggreen, fg=white}
+       \setbeamercolor{titlelike}{fg=ifmggreen}
+       \setbeamercolor{title}{bg=ifmggreen, fg=white}
+       \setbeamercolor{frametitle}{bg=ifmggreen, fg=white}
+       
+       % Cores do Bloco (Problema de Pesquisa)
+       \setbeamercolor{block title}{bg=ifmggreen, fg=white}
+       \setbeamercolor{block body}{bg=ifmggreen!10, fg=black}
+       
+       % 3. Posicionamento da Logo (Canto superior direito)
+       \addtobeamertemplate{frametitle}{}{
+         \begin{tikzpicture}[remember picture,overlay]
+           \node[anchor=north east, yshift=-1pt, xshift=-1pt] at (current page.north east) {
+             \includegraphics[height=0.8cm]{figs/logo_ifmg.jpg}
+           };
+         \end{tikzpicture}
+       }
+       
+       % 4. Customização do Rodapé
+       \setbeamertemplate{footline}{
+         \leavevmode%
+         \hbox{%
+         \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+           \usebeamerfont{author in head/foot}\insertshortauthor
+         \end{beamercolorbox}%
+         \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+           \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+         \end{beamercolorbox}}%
+         \vskip0pt%
+       }
+       \setbeamertemplate{navigation symbols}{}
+bibliography: referencias-qualificacao.bib
+csl: apa-7-edicao.csl
+---
+
+## Apresentação Seminários de Qualificação 
+
+**Mestrando:** Edvaldo Garcia Rezende  
+**Orientador:** Prof. Washington Santos Silva  
+**Coorientador:** Prof. Lelis Pedro de Andrade  
+
+**Linha de Pesquisa:** Finanças Corporativas e Investimentos  
+
+---
+
+## Contexto da Pesquisa
+
+A dissertação de @diniz_precificacao_2023, Precificação de fatores ESG no mercado de ações brasileiro: uma abordagem sob o escopo dos modelos de Fama-French, analisou se o desempenho nas dimensões ESG representa um fator de risco significativo na precificação de ações no Brasil.
+
+Segundo @diniz_precificacao_2023, embora mercados desenvolvidos possuam literatura consolidada, o impacto do desempenho ESG na B3 ainda apresenta uma lacuna de compreensão empírica. 
+
+**Esta pesquisa busca avançar a partir dessa provocação.**
+
+---
+
+## Problema de Pesquisa
+
+\begin{block}{Problema de Pesquisa}
+"A estratégia de investimento em carteiras com altos scores ESG na B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, mesmo após o controle pelos 5 fatores do modelo de Fama-French?"
+\end{block}
+
+---
+
+## Objetivo Geral da Pesquisa
+
+Analisar se o desempenho superior de carteiras ESG na B3 persiste como um Alpha de Jensen ($\alpha$) estatisticamente significativo após o controle pelos 5 fatores de **Fama-French** [@fama_five-factor_2015].
+
+
+---
+
+
+## Objetivos Específicos (Produtos)
+
+- Produto Bibliográfico (Artigo): Testar a robustez estatística do Alpha de Jensen em portfólios ESG, controlando os cinco fatores de risco sistêmico, visando publicação em periódico.
+
+---
+
+## Objetivos Específicos (Produtos)
+
+- Produto Técnico (Plataforma): Desenvolver uma ferramenta tecnológica interativa que realize a decomposição de fatores e análise de desempenho de carteiras para o investidor brasileiro, integrando métricas ESG e financeiras.
+
+---
+
+## Metodologia: Modelo de 5 Fatores
+
+Para isolar o efeito ESG, utilizaremos a regressão de séries temporais [@fama_five-factor_2015]:
+
+$$
+\begin{aligned}
+(R_{it} - R_{ft}) &= \alpha_i + b_i(R_{mt} - R_{ft}) + s_i SMB_t + h_i HML_t \\
+&+ r_i RMW_t + c_i CMA_t + e_{it}
+\end{aligned}
+$$
+
+---
+
+## Metodologia: Modelo de 5 Fatores
+
+| Sigla | Fator | Descrição |
+|:---:|:---|:---|
+| **$R_m - R_f$** | Mercado | Prêmio de risco de mercado |
+| **SMB** | Tamanho | *Small Minus Big* (Capitalização) |
+| **HML** | Valor | *High Minus Low* (Book-to-Market) |
+| **RMW** | Rentabilidade | *Robust Minus Weak* (Lucratividade) |
+| **CMA** | Investimento | *Conservative Minus Aggressive* |
+
+---
+
+## Metodologia: Modelo de 5 Fatores
+
+* **$R_{it} - R_{ft}$:** Retorno excedente da carteira ESG;
+* **$\alpha_i$:** Alpha de Jensen - Retorno anormal;
+* **$b_i, s_i, h_i, r_i, c_i$:** Coeficientes de sensibilidade dos 5 fatores;
+* **$e_{it}$:** Termo de erro residual.
+
+---
+
+## Enfoque Teórico: Nóbrega et al. (2025)
+
+O artigo "ESG na formação de Carteiras: o que revela a literatura científica?" de @nobrega_esg_2025 realizou uma Revisão Sistemática da Literatura (87 artigos entre 2014-2023), identificando **8 Eixos Temáticos**.
+
+---
+
+## Enfoque Teórico: Nóbrega et al. (2025) (1/2)
+
+\begin{table}[]
+\begin{tabular}{cl}
+\textbf{} & \textbf{Eixo Temático} \\ \hline
+\textbf{1} & \textbf{ESG como fator de risco e precificação de ativos;} \\
+\textbf{2} & \textbf{ESG como preferência não financeira dos investidores;} \\
+\textbf{3} & \textbf{ESG como sinal de qualidade organizacional e resiliência;} \\
+\textbf{4} & \textbf{ESG como estilo de investimento e estratégia de carteira;} \\ \hline
+\end{tabular}
+\end{table}
+
+---
+
+## Enfoque Teórico: Nóbrega et al. (2025) (2/2)
+
+\begin{table}[]
+\begin{tabularx}{\textwidth}{c X}
+\textbf{} & \textbf{Eixo Temático} \\ \hline
+\textbf{5} & \textbf{Incerteza e divergência nos ratings ESG;} \\
+\textbf{6} & \textbf{Materialidade condicional por setor e heterogeneidade setorial;} \\
+\textbf{7} & \textbf{ESG em mercados emergentes e conexão com os ODS;} \\
+\textbf{8} & \textbf{ESG agregado vs. dimensões individuais (E, S, G).} \\ \hline
+\end{tabularx}
+\end{table}
+
+---
+
+## Enfoque Teórico: Aplicação
+
+O projeto situa-se na interseção de três eixos específicos:
+
+\begin{table}[]
+\begin{tabularx}{\textwidth}{c X}
+\textbf{Eixo Temático} & \textbf{Aplicação no Projeto} \\ \hline
+\textbf{1: Risco e Precificação} & \textbf{Uso do modelo Fama-French 5 fatores para testar retornos anormais ($\alpha$).} \\
+\textbf{7: Mercados Emergentes} & \textbf{Análise focada no contexto da B3 (Brasil).} \\
+\textbf{8: Agregado vs. Dimensões} & \textbf{Investigação do impacto do score total e isolamento de cada dimensão (E, S, G).} \\ \hline
+\end{tabularx}
+\end{table}
+
+---
+
+## Referências {.allowframebreaks}
+
+::: {#refs}
+:::

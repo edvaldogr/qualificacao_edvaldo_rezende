@@ -1,0 +1,169 @@
+---
+author: "Edvaldo Rezende"
+institute: "IFMG - Mestrado Profissional"
+date: "2026-04-23"
+lang: pt
+format:
+  revealjs:
+    theme: simple
+    footer: "Edvaldo Rezende | IFMG"
+    slide-number: c/t
+    show-slide-number: all
+    css: style.css
+    include-in-header:
+      - text: |
+          <div class="top-bar">
+            <img src="figs/logo_ifmg.jpg" class="header-logo">
+          </div>
+bibliography: referencias-qualificacao.bib
+csl: apa-7-edicao.csl
+---
+
+::: {.capa-conteudo}
+
+<br>
+
+# Análise de desempenho de Carteiras sob a ótica ESG na B3: uma abordagem via Modelo de 5 fatores de Fama-French
+
+:::
+
+---
+
+## Apresentação Seminários de Qualificação 
+
+**Mestrando:** Edvaldo Garcia Rezende 
+
+**Orientador:** Prof. Washington Santos Silva 
+
+**Coorientador:** Prof. Lelis Pedro de Andrade
+
+**Linha de Pesquisa:** Finanças Corporativas e Investimentos
+
+**IFMG - Mestrado Profissional em Administração**
+
+<p style="text-align: center;">**23/04/2026**</p>
+
+---
+
+## Contexto da Pesquisa
+
+A dissertação de @diniz_precificacao_2023, Precificação de fatores ESG no mercado de ações brasileiro: uma abordagem sob o escopo dos modelos de Fama-French, analisou se o desempenho nas dimensões ESG representa um fator de risco significativo na precificação de ações no Brasil.
+
+Segundo @diniz_precificacao_2023, embora mercados desenvolvidos possuam literatura consolidada, o impacto do desempenho ESG na B3 ainda apresenta uma lacuna de compreensão empírica. 
+
+**Esta pesquisa busca avançar a partir dessa provocação.**
+
+---
+
+## Problema de Pesquisa
+
+::: {.callout-tip icon=false}
+## Problema de Pesquisa
+
+"A estratégia de investimento em carteiras com altos scores ESG na B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, mesmo após o controle pelos 5 fatores do modelo de Fama-French?"
+:::
+
+---
+
+## Objetivo Geral da Pesquisa
+
+Analisar se o desempenho superior de carteiras ESG na B3 persiste como um Alpha de Jensen ($\alpha$) estatisticamente significativo após o controle pelos 5 fatores de **Fama-French** [@fama_five-factor_2015].
+
+
+---
+
+## Objetivos Específicos (Produtos)
+
+- Produto Bibliográfico (Artigo): Testar a robustez estatística do Alpha de Jensen em portfólios ESG, controlando os cinco fatores de risco sistêmico, visando publicação em periódico.
+
+---
+
+## Objetivos Específicos (Produtos)
+
+- Produto Técnico (Plataforma): Desenvolver uma ferramenta tecnológica interativa que realize a decomposição de fatores e análise de desempenho de carteiras para o investidor brasileiro, integrando métricas ESG e financeiras.
+
+---
+
+## Metodologia: Modelo de 5 Fatores
+
+Para isolar o efeito ESG, utilizaremos a regressão de séries temporais [@fama_five-factor_2015]:
+
+$$
+\begin{aligned}
+(R_{it} - R_{ft}) &= \alpha_i + b_i(R_{mt} - R_{ft}) + s_i SMB_t + h_i HML_t \\
+&+ r_i RMW_t + c_i CMA_t + e_{it}
+\end{aligned}
+$$
+
+---
+
+## Metodologia: Modelo de 5 Fatores
+
+| Sigla | Fator | Descrição |
+|:---:|:---|:---|
+| **$R_m - R_f$** | Mercado | Prêmio de risco de mercado |
+| **SMB** | Tamanho | *Small Minus Big* (Capitalização) |
+| **HML** | Valor | *High Minus Low* (Book-to-Market) |
+| **RMW** | Rentabilidade | *Robust Minus Weak* (Lucratividade) |
+| **CMA** | Investimento | *Conservative Minus Aggressive* |
+
+---
+
+## Metodologia: Modelo de 5 Fatores
+
+* **$R_{it} - R_{ft}$:** Retorno excedente da carteira ESG;
+* **$\alpha_i$:** Alpha de Jensen - Retorno anormal;
+* **$b_i, s_i, h_i, r_i, c_i$:** Coeficientes de sensibilidade dos 5 fatores;
+* **$e_{it}$:** Termo de erro residual.
+
+---
+
+## Enfoque Teórico: Nóbrega et al. (2025)
+
+O artigo "ESG na formação de Carteiras: o que revela a literatura científica?" de @nobrega_esg_2025 realizou uma Revisão Sistemática da Literatura (87 artigos entre 2014-2023), identificando **8 Eixos Temáticos**.
+
+---
+
+## Enfoque Teórico: Nóbrega et al. (2025)
+
+**8 Eixos Temáticos** (Parte 1/2):
+
+|   | Eixo Temático |
+|:---:|:---|
+| **1** | **ESG como fator de risco e precificação de ativos;** |
+| **2** | **ESG como preferência não financeira dos investidores;** |
+| **3** | **ESG como sinal de qualidade organizacional e resiliência;** |
+| **4** | **ESG como estilo de investimento e estratégia de carteira;** |
+
+---
+
+## Enfoque Teórico: Nóbrega et al. (2025)
+
+Continuação dos **8 Eixos Temáticos** (Parte 2/2):
+
+|   | Eixo Temático |
+|:---:|:---|
+| **5** | **Incerteza e divergência nos ratings ESG;** |
+| **6** | **Materialidade condicional por setor e heterogeneidade setorial;** |
+| **7** | **ESG em mercados emergentes e conexão com os ODS;** |
+| **8** | **ESG agregado vs. dimensões individuais (E, S, G).** |
+
+---
+
+
+## Enfoque Teórico: Aplicação
+
+O projeto situa-se na interseção de três eixos específicos:
+
+| Eixo Temático | Aplicação no Projeto |
+| :--- | :--- |
+| **1: Risco e Precificação** | Uso do modelo **Fama-French 5 fatores** para testar retornos anormais ($\alpha$). |
+| **7: Mercados Emergentes** | Análise focada no contexto da **B3 (Brasil)**. |
+| **8: Agregado vs. Dimensões** | Investigação do impacto do score total e isolamento de cada dimensão (E, S, G). |
+
+---
+
+## Referências
+
+::: {#refs}
+:::
