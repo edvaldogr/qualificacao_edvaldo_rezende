@@ -26,21 +26,27 @@ pesquisa, os arquivos estão estruturados da seguinte forma:
 
 ```text
 qualificacao_edvaldo_rezende/
-├── apresentacao_seminario/     # Arquivos da apresentação para a disciplina de Seminários de Qualificação
-├── dados/                      # Bases de dados
-│   ├── brutos                  # Base de dados originais
-│   ├── limpos                  # Base de Dados processados
-├── produto_bibliografico/      # Arquivos do produto bibliográfico
-├── produto_tecnico/            # Arquivos do produto técnico
-├── relatorios/                 # Relatórios 
-├── scripts/                    # Scripts R 
-├── src/                        # Arquivos-fonte do documento Quarto
-│   ├── exame_qualificacao.qmd  # Arquivo principal do projeto
-│   ├── pre_textuais.tex        # Configurações de capa e folha de rosto
-│   ├── referencias.bib         # Base bibliográfica BibTeX
+├── apresentacao_seminario/             # Arquivos da apresentação para a disciplina de Seminários de Qualificação
+│   ├── figs                            # Figuras utilizadas para a apresentação 
+│   ├── apresentacao.qmd                # Arquivo principal da apresentação
+│   ├── apresentacao_PDF.qmd            # Arquivo para gerar a apresentação no formato PDF
+│   ├── referencias-qualificacao.bib    # Base bibliográfica da apresentação
+│   ├── apa-7-edicao.csl                # Estilo APA 7a Edição
+│   ├── associacao-brasileira-de-normas-tecnicas.csl    # Estilo ABNT
+├── dados/                              # Bases de dados
+│   ├── brutos                          # Base de dados originais
+│   ├── limpos                          # Base de Dados processados
+├── produto_bibliografico/              # Arquivos do produto bibliográfico
+├── produto_tecnico/                    # Arquivos do produto técnico
+├── relatorios/                         # Relatórios 
+├── scripts/                            # Scripts R 
+├── src/                                # Arquivos-fonte do documento Quarto
+│   ├── exame_qualificacao.qmd          # Arquivo principal do projeto
+│   ├── pre_textuais.tex                # Configurações de capa e folha de rosto
+│   ├── referencias.bib                 # Base bibliográfica BibTeX
 │   └── associacao-brasileira-de-normas-tecnicas-ipea.csl  # Estilo ABNT
-├── README.md                   # Documentação e registro de evolução
-├── README_Washington.md        # Arquivo original de orientação do Prof. Washington
+├── README.md                           # Documentação e registro de evolução
+├── README_Washington.md                # Arquivo original de orientação do Prof. Washington
 └── qualificacao_edvaldo_rezende.Rproj  # Arquivo de projeto do RStudio
 ```
 
@@ -86,8 +92,8 @@ Espaço destinado à documentação das etapas de escrita e decisões tomadas du
 o processo de orientação.
 
 ### Cronograma de Pendências (To-Do)
-- [ ] &nbsp;Atualizar os dados do discente no cabeçalho do arquivo .qmd.
-- [ ] &nbsp;Inserir as primeiras entradas bibliográficas no arquivo .bib.
+- [x] &nbsp;Atualizar os dados do discente no cabeçalho do arquivo .qmd.
+- [x] &nbsp;Inserir as primeiras entradas bibliográficas no arquivo .bib.
 - [ ] &nbsp;Estruturar a redação da Revisão de Literatura e Metodologia.
 
 ### Histórico de Alterações e Reuniões de Orientação
@@ -96,13 +102,14 @@ o processo de orientação.
 | 09/04/2026 | Configuração inicial do repositório e ajuste do motor de renderização PDF. |
 | 10/04/2026 | Reestruturação da documentação README.md para acompanhamento do projeto. |
 | 23/04/2026 | Elaboração dos arquivos para a apresentação da disciplina de Seminários de Qualificação |
+| 20/05/2026 | Escrita da Introdução e Revisão de Literatura do Projeto de Pesquisa |
 
 ### Datas das apresentações da disciplina de Seminários de Qualificação
 | Data | | Hora | Descrição do Escopo da Apresentação |
 | :--- | :--- | :--- |
 | 23/04/2026 | 17:30  | Apresentação Inicial  do Problema de Pesquisa, Objetivos, Justificativa e Enfoque Teórico |
-| 14/05/2026 | a definir  | Apresentação da Revisão de Literatura  |
-| 11/06/2026 | a definir  | Apresentação da Metodologia, Instrumentos de Pesquisa e Cronograma  |
+| 21/05/2026 | 17:30  | Apresentação da Revisão de Literatura  |
+| 11/06/2026 | 17:30  | Apresentação da Metodologia, Instrumentos de Pesquisa e Cronograma  |
 ---
 
 ## Suporte e Documentação Auxiliar

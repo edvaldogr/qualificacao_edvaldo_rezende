@@ -25,15 +25,15 @@ format:
           \newcommand{\CampusExameQualificacao}{Campus Formiga}
           \newcommand{\ProgramaExameQualificacao}{Mestrado Profissional em Administração}
           \newcommand{\NomeAutorExameQualificacao}{Edvaldo Garcia Rezende}
-          \newcommand{\TituloExameQualificacao}{Título do Projeto de Pesquisa}
-          \newcommand{\SubtituloExameQualificacao}{}
+          \newcommand{\TituloExameQualificacao}{Análise de Desempenho de Carteiras baseadas no Índice ESG na B3}
+          \newcommand{\SubtituloExameQualificacao}{Uma Abordagem Comparativa via Modelos de Fatores}
           \newcommand{\CidadeExameQualificacao}{Formiga}
           \newcommand{\EstadoExameQualificacao}{MG}
           \newcommand{\AnoExameQualificacao}{2026}
           \newcommand{\OrientadorExameQualificacao}{Prof. Dr. Washington Santos Silva}
           \newcommand{\CoorientadorExameQualificacao}{Prof. Dr. Lelis Pedro de Andrade }
           \newcommand{\LinhaPesquisaExameQualificacao}{Finanças Corporativas e Investimentos}
-          \newcommand{\PalavrasChaveExameQualificacao}{palavra-chave 1; palavra-chave 2; palavra-chave 3.}
+          \newcommand{\PalavrasChaveExameQualificacao}{ESG; Precificação de Ativos; Modelos de Fatores; Desempenho de Carteiras; Fama-French; Carhart; Mercado de Capitais; B3}
           \newcommand{\TextoApresentacaoExameQualificacao}{Projeto de pesquisa apresentado ao Programa de Pós-Graduação em Administração do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais (IFMG) -- Campus Formiga, como requisito para o Exame de Qualificação do Mestrado Profissional em Administração.}
     documentclass: report
     papersize: a4
@@ -81,7 +81,7 @@ Na maior parte do tempo, você precisará alterar apenas este arquivo.
 
 \begin{resumoExameQualificacao}
 
-Escreva aqui o resumo do projeto.
+A integração dos critérios Ambientais, Sociais e de Governança (ESG) tem se consolidado como um elemento central na moderna teoria de finanças, levantando debates sobre sua real capacidade de gerar retornos anormais no mercado acionário, especialmente em economias emergentes. Este projeto de pesquisa tem como objetivo analisar se o investimento em carteiras baseadas no Índice ESG na B3 resulta em um Alpha de Jensen positivo e estatisticamente significativo. Para isso, adota-se uma abordagem metodológica quantitativa e comparativa, utilizando os modelos de apreçamento de ativos CAPM, Fama-French (três e cinco fatores) e Carhart (quatro fatores). O estudo avança na literatura ao propor a investigação do desempenho não apenas do índice ESG agregado, mas também de seus pilares individuais (E, S e G) de forma segregada, testando hipóteses que envolvem a variabilidade setorial e a sensibilidade estatística a modelos de risco de diferentes complexidades. Como resultados, preveem-se duas entregas principais: a elaboração de um artigo científico detalhando os testes empíricos e a criação de um produto técnico-tecnológico, estruturado como uma plataforma interativa de simulação e decomposição de fatores. Espera-se que a pesquisa preencha lacunas sobre a precificação de ativos sustentáveis no Brasil e forneça um instrumento prático de suporte à tomada de decisão para investidores e gestores de recursos no mercado de capitais.
 
 \end{resumoExameQualificacao}
 
@@ -92,9 +92,9 @@ Descomente as linhas abaixo apenas se houver figuras ou tabelas no projeto.
 
 <!--
 \inserirListaDeFigurasExameQualificacao
-
-\inserirListaDeTabelasExameQualificacao
 -->
+\inserirListaDeTabelasExameQualificacao
+
 
 \inserirSumarioExameQualificacao
 
@@ -111,25 +111,67 @@ Escreva abaixo o texto do projeto de pesquisa.
 
 # Introdução {#sec-introducao}
 
+A integração de critérios ambientais, sociais e de governança (ESG - Environmental, Social and Governance) ao processo de tomada de decisão de investimentos deixou de ser uma tendência meramente ética para se consolidar como um elemento central na teoria de finanças modernas e na precificação de ativos. A literatura científica contemporânea mapeada por @nobrega_esg_2025 aponta a inexistência de um consenso definitivo sobre o impacto do ESG no desempenho das carteiras, evidenciando uma acentuada heterogeneidade e sensibilidade dos resultados dependendo da região geográfica, controle de fatores de risco e o método de triagem (screening) empregado pelos investidores. Sob a perspectiva clássica de eficiência de mercado e apreçamento de ativos, o debate concentra-se em determinar se as práticas sustentáveis mitigam riscos sistêmicos e idiossincráticos ou se atuam puramente como uma preferência de estilo de investimento que pode demandar um desconto no prêmio de risco esperado [@nobrega_esg_2025]. Adicionalmente, discute-se se os efeitos de apreçamento decorrem da pontuação agregada da firma ou de pilares de sustentabilidade isolados, uma vez que as dimensões ambiental, social e de governança corporativa respondem a lógicas de risco distintas e a contextos geográficos com diferentes graus de maturidade de mercado [@naffa_factor_2022; @zehir_is_2020].
+
+No contexto de mercados emergentes, a análise desse fenômeno adquire contornos adicionais de complexidade. Conforme apontado por @casartelli_esg_2025, o desempenho de portfólios sustentáveis nesses ecossistemas é significativamente vulnerável a choques macroeconômicos e turbulências de mercado. Em tais cenários, o investidor depara-se com o dilema entre a busca por resiliência de longo prazo por meio de ativos de alta qualidade socioambiental e a atratividade de retornos de curto prazo de portfólios convencionais (ou de alta intensidade de carbono), os quais frequentemente superam as carteiras verdes durante ciclos de forte volatilidade econômica (@casartelli_esg_2025; @cunha_low-carbon_2021). Essa instabilidade impõe a necessidade de testar se a precificação de prêmios de risco em mercados em desenvolvimento decorre do índice composto ou se o mercado reage de forma assimétrica ou mesmo negativa a dimensões específicas, como a ambiental (E) quando materializada por instrumentos financeiros sustentáveis dedicados [@lebelle_corporate_2020], ou ao pilar de governança corporativa e social, cuja dinâmica multifatorial frequentemente anula o prêmio de retorno anormal esperado à medida que novos controles de risco e proxies de fricções regulatórias locais são incorporados aos modelos de apreçamento (@hasan_exploring_2025; @kumar_revaluating_2025; @mulialim_how_2023; @zehir_is_2020; @zhu_esg_2024).
+
+No Brasil, a análise empírica sobre o desempenho e a precificação de ativos sustentáveis tem avançado por meio de abordagens multifatoriais. Estudos indicam que a incorporação de fatores de risco associados à sustentabilidade melhora de forma relevante a capacidade preditiva e explicativa dos modelos de precificação de ativos na B3 (@chagas_praticas_2024; @diniz_precificacao_2023). Por outro lado, há indícios substanciais de que estratégias baseadas no Índice de Sustentabilidade Empresarial (ISE-B3) proporcionam maior proteção ao investidor devido à redução de volatilidade e à atenuação da exposição ao risco extremo medido pelo Value-at-Risk (VaR) [@pereira_environmental_2022]. Desse modo, torna-se imperativo investigar se o desempenho de carteiras com alto score ESG no mercado acionário brasileiro gera, de fato, retornos anormais estatisticamente consistentes quando exposto ao crivo de modelos de fatores tradicionais e multifatoriais robustos, avaliando tanto o índice unificado quanto a atuação desagregada de seus pilares individuais.
 
 
 ## Problema de pesquisa {#sec-problema}
 
+A partir do cenário exposto, formula-se a seguinte questão norteadora para esta investigação:
+A estratégia de investimento em carteiras com altos scores ESG na B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, após o controle de modelos de fatores (CAPM; Fama-French 3 e 5 fatores; Carhart 4 fatores), quando analisada tanto de forma agregada quanto segregada por seus pilares individuais?
 
 
 ## Objetivo geral {#sec-objgeral}
 
-
+Analisar se o investimento em carteiras com altos scores ESG na B3 resulta em Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, de forma agregada e desagregada por pilar (E, S e G), utilizando como controle os modelos de apreçamento de ativos CAPM, Fama-French de três e cinco fatores, e o modelo de quatro fatores de Carhart.
 
 ## Objetivos específicos {#sec-objespecificos}
 
+Para a consecução do objetivo geral, estabelecem-se os seguintes objetivos específicos, delineados na forma de produtos e entregas acadêmicas e aplicadas:
 
+- Produto Bibliográfico (Artigo Científico): Testar a significância estatística do Alpha de Jensen em portfólios estruturados com base no Índice ESG da B3 de forma agregada e segregada (pilares E, S e G isoladamente), empregando os fatores de risco sistemático disponibilizados pelo Centro de Pesquisas em Finanças da USP (NEFIN), com o intuito de comparar a aderência e o desempenho relativo entre os modelos CAPM, Fama-French (três e cinco fatores) e Carhart (quatro fatores).
+
+- Produto Técnico (Plataforma Tecnológica): Desenvolver uma ferramenta interativa e de livre acesso que execute a decomposição de fatores e a avaliação de desempenho de carteiras de ações sob a perspectiva do investidor nacional, viabilizando a simulação do comportamento histórico do Índice ESG (e de seus componentes individuais) sob diferentes premissas de modelos de risco.
 
 
 ## Justificativa {#sec-justificativa}
 
+A fundamentação teórica e prática deste estudo repousa na urgência de compreender o comportamento empírico dos investimentos sustentáveis no mercado de capitais brasileiro sob a ótica da moderna teoria de carteiras. Conforme mapeado na revisão de literatura de @nobrega_esg_2025, o comportamento das variáveis ESG na formação de portfólios no cenário doméstico pode desempenhar triplo papel: atuar como fator de risco não precificado pelos modelos tradicionais, reflexo de preferências de estilo de gestão ou sinalizador de qualidade de governança corporativa e resiliência operacional.
 
+Sob a dimensão da eficiência e especificação de modelos de apreçamento, a inserção de variáveis ambientais e sociais tem demonstrado robustez matemática para explicar anomalias de mercado. @diniz_precificacao_2023 evidencia que a construção e incorporação de um "fator verde" (green factor) aos modelos clássicos de Fama-French melhora sensivelmente a acurácia do apreçamento de ativos na B3, sugerindo que o mercado de ações brasileiro já reflete as informações ligadas à sustentabilidade corporativa, mesmo que em um estágio inicial de maturação. Adicionalmente, @chagas_praticas_2024 reforça essa perspectiva no Sul Global, ao demonstrar que a inclusão de componentes ESG em modelos multifatoriais proporciona um ganho de poder explicativo estatisticamente superior em relação aos modelos de fatores tradicionais de cinco fatores isolados.
 
+Entretanto, as justificativas empíricas ganham profundidade ao isolar os pilares e comparar diferentes realidades de mercado. @naffa_factor_2022 demonstram internacionalmente que carteiras formadas por pilares individuais de sustentabilidade exibem dinâmicas de retorno e sensibilidades a fatores de risco altamente discrepantes, as quais acabam sendo camufladas quando aglutinadas em um índice composto. Sob a perspectiva da gestão e mensuração de riscos, @peng_systematic_2026 apresenta evidências empíricas cruciais de que a triagem estruturada por critérios de sustentabilidade (como a seleção baseada no DJSI) possui capacidade direta de mitigar a exposição ao risco sistemático ($\beta$) e atenuar a variabilidade total do portfólio. Esse papel de amortecimento de riscos sistêmicos, contudo, é acompanhado de uma neutralidade nos retornos excedentes, uma vez que a carteira sustentável falha em gerar Alphas de Jensen robustos [@peng_systematic_2026].
+
+A literatura sobre mercados emergentes, como a Índia, é divergente: enquanto @kumar_revaluating_2025 identifica que o desempenho ESG tem um efeito positivo e estatisticamente significante nos retornos em excesso, evidenciando um prêmio de risco, outros estudos como @hasan_exploring_2025 encontram Alphas positivos, porém estatisticamente insignificantes ao aplicar controles multifatoriais estritos. Na China, @zhu_esg_2024 reforça essa ressalva ao demonstrar, sob a estrutura do modelo de três fatores de Fama-French, que os fatores tradicionais de estilo capturam a variabilidade dos retornos do mercado acionário chinês, restando pouco poder explicativo residual para os scores de sustentabilidade em portfólios unificados. No campo da transição ecológica e financiamento de projetos sustentáveis, @lebelle_corporate_2020 revelam um aspecto crítico ao analisar as reações do mercado acionário a anúncios de emissão de títulos corporativos. Os autores identificam uma reação de mercado consistentemente negativa e estatisticamente significativa (CARs negativos) sob as especificações do CAPM, Fama-French e Carhart, o que sugere que investidores de ações podem penalizar iniciativas estritamente ambientais (E) no curto prazo devido a custos de agência, conformidade regulatória ou receios de greenwashing. Ademais, em outros mercados emergentes representativos como a Índia, @hasan_exploring_2025 demonstram que a aparente geração de valor por critérios ESG é frequentemente dissipada ao se controlar os fatores clássicos de estilo, chamando a atenção para a necessidade de uso concorrente de modelos mais complexos para evitar análises e conclusões espúrias sobre o prêmio sustentável. De forma análoga, @mulialim_how_2023 argumentam, com base em evidências do mercado financeiro indonésio, que as características institucionais regionais tornam as dimensões de Governança (G) e Social (S) fontes de risco mais sensíveis que a dimensão estritamente ambiental (E). No Brasil, isso é corroborado pelo fato de o mercado reagir de forma distinta a diferentes dimensões regulatórias e informacionais, tornando a comparação entre portfólios agregados e segregados de extrema utilidade prática e científica [@diniz_precificacao_2023].
+
+Portanto, o mapeamento exaustivo do comportamento do Alpha de Jensen sob múltiplos fatores de risco provê aos investidores institucionais e reguladores brasileiros subsídios analíticos fundamentais para a alocação eficiente de recursos e formulação de políticas de sustentabilidade no mercado financeiro.
+
+## Hipóteses da Pesquisa
+
+Com amparo nas evidências empíricas da literatura nacional e internacional de finanças, formulam-se as seguintes hipóteses de pesquisa:
+
+- $H_1$ (Relevância de Retorno): Existe uma diferença estatisticamente significativa entre os retornos das carteiras que compõem o Índice ESG e o benchmark tradicional de mercado representado pelo índice IBOVESPA. 
+
+Essa hipótese fundamenta-se na premissa de que a incorporação de critérios de sustentabilidade altera o perfil de risco-retorno das empresas na B3, de modo que carteiras ESG não replicam de maneira passiva os movimentos do mercado amplo. Estudos anteriores em mercados emergentes, como o de @ortas_does_2012 e de @pereira_environmental_2022 no Brasil, sugerem que a triagem socioambiental e de governança pode gerar desvios de desempenho em relação a índices ponderados por valor de mercado, decorrentes tanto de vieses de seleção setorial quanto da redução de custos de capital de empresas com alto padrão socioambientais, além do impacto estrutural sobre o risco sistemático ($\beta$) e a volatilidade da carteira (@ortas_does_2012; @peng_systematic_2026; @pereira_environmental_2022).
+
+- $H_2$ (Retorno Anormal): O Índice ESG da B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo mesmo após o controle pelos fatores de risco sistemático do modelo de 4 fatores de Carhart e dos modelos de 3 e 5 fatores de Fama-French. 
+
+Esta hipótese sustenta-se nas evidências de que os portfólios sustentáveis podem possuir fontes idiossincráticas de criação de valor não totalmente absorvidas pelos fatores de tamanho, valor, lucratividade, investimento e momentum. Embora estudos como @diniz_precificacao_2023 e @chagas_praticas_2024 comprovem que fatores ESG agregam poder explicativo ($R^2$) aos modelos de regressão, testar a geração de um Alpha ($\alpha$) positivo ajustado por modelos tradicionais (sem o fator verde embutido) permite verificar se a sustentabilidade atua efetivamente como um canal de eficiência que se traduz em prêmio anormal real para o investidor brasileiro, ou se o retorno é neutro, como observado globalmente por @peng_systematic_2026 e @zhu_esg_2024.
+
+- $H_3$ (Variabilidade Setorial): O retorno anormal (Alpha de Jensen) gerado pela carteira ESG apresenta variabilidade estatística significativa quando as empresas integrantes são segregadas de acordo com os seus respectivos setores de atuação econômica. 
+
+A justificativa para essa proposição baseia-se no estudo de @nobrega_esg_2025, que sugere que o efeito decorrente de setores sob maior rigidez regulatória em economias emergentes pode influenciar significativamente o retorno e o desempenho de portfólios ESG, dadas as elevadas exigências de conformidade e as sanções legais que incidem diretamente sobre a variabilidade dos fluxos de caixa e a taxa de desconto aplicada a essas indústrias específicas.
+
+- $H_4$ (Sensibilidade ao Modelo): A significância estatística e a magnitude do Alpha do Índice ESG alteram-se sistematicamente conforme a complexidade e a estrutura dimensional do modelo de apreçamento empregado (comparação sequencial entre CAPM, Fama-French 3 e 5 fatores, e Carhart 4 fatores). 
+
+Esta hipótese apoia-se no entendimento de que modelos com maior especificação fatorial tendem a capturar anomalias de mercado anteriormente atribuídas erroneamente ao Alpha (habilidade do gestor ou "prêmio verde" espúrio). O ganho de poder explicativo demonstrado por estudos multifatoriais justifica a necessidade de controles rigorosos: como indicam as evidências de @casartelli_esg_2025, @hasan_exploring_2025, @kumar_revaluating_2025 e @zehir_is_2020, a exposição ao risco de fatores de estilo clássicos (como momentum, tamanho e rentabilidade) frequentemente absorve os ganhos atribuídos a portfólios sustentáveis, demonstrando que a existência de um Alpha genuíno é dependente do controle exaustivo das covariáveis de mercado.
+
+- $H_5$ (Efeito da Segregação de Pilares): O desempenho ajustado ao risco (Alpha de Jensen) e a sensibilidade aos fatores de apreçamento variam significativamente quando a carteira ESG é analisada por meio de seus pilares segregados (Ambiental, Social e de Governança corporativa de forma isolada) em comparação com a carteira avaliada pelo índice ESG composto e unificado. 
+
+Esta hipótese fundamenta-se nas evidências internacionais de @naffa_factor_2022 e @zehir_is_2020, que indicam que a agregação de múltiplos critérios de sustentabilidade em uma única nota unificada anula os efeitos idiossincráticos de pilares individuais, gerando subestimação ou mascaramento de riscos. Sob uma perspectiva regional, @zehir_is_2020 destacam que as diferenças institucionais e a maturidade de mercado entre economias desenvolvidas (Europa) e emergentes (Turquia) influenciam a relevância explicativa de cada subcomponente da sustentabilidade na determinação de Alphas. Além disso, a segregação do pilar Ambiental (E) ganha justificativa empírica adicional ao considerar que iniciativas ecológicas corporativas puras podem sofrer penalizações temporárias do mercado de capitais acionário; conforme documentado por @lebelle_corporate_2020, anúncios de financiamento estritamente verdes, como títulos verdes corporativos (green bonds), geram retornos anormais acumulados negativos significativos sob as óticas do CAPM, de Fama-French e de Carhart devido a preocupações com custos de agência e conformidade regulatória. Em contrapartida, @mulialim_how_2023 apontam que os pilares Social e de Governança exercem um papel positivo e mais saliente nos retornos excedentes em mercados emergentes devido ao prêmio de governança corporativa e conformidade legal, uma assimetria empírica que @diniz_precificacao_2023 já sinaliza de forma incipiente ao destacar que o mercado acionário brasileiro precifica de modo distinto anomalias socioambientais e corporativas específicas.
 
 
 # Revisão da Literatura {#sec-revisao}
@@ -137,8 +179,179 @@ Escreva abaixo o texto do projeto de pesquisa.
 
 ## Lacuna de Pesquisa {#sec-lacuna}
 
+O presente estudo visa preencher a necessidade de conduzir uma avaliação comparativa sistemática e unificada entre os modelos de apreçamento de ativos (CAPM, Fama-French de três e cinco fatores, e o modelo de quatro fatores de Carhart), aplicada a um horizonte amostral decenal ($2016\text{--}2026$), avaliando de forma robusta e concorrente os impactos agregados e desagregados de suas dimensões no Índice ESG da B3.
 
+Apesar do avanço exponencial das publicações que abordam a interseção entre finanças e sustentabilidade nas últimas décadas, persiste uma lacuna teórica e metodológica substancial sobre a consistência e a persistência temporal da geração de retornos anormais ($\alpha$ de Jensen) em mercados emergentes, notadamente na B3. A literatura científica ainda se ressente de um consenso definitivo; @nobrega_esg_2025 salientam que as estratégias baseadas em critérios ESG (Environmental, Social, and Governance) revelam extrema sensibilidade em seus resultados dependendo de fatores como o setor de atuação, a localização geográfica, o porte das empresas e o perfil dos investidores analisados.
 
+Na mesma linha de ceticismo acadêmico, @casartelli_esg_2025 identificam que os retornos excedentes de fundos ESG no mercado brasileiro tendem a apresentar comportamento estatisticamente insignificante na maioria dos modelos testados. Os autores alertam que, quando submetidos a períodos de alta volatilidade macroeconômica e turbulência de mercado, as carteiras tradicionais ("marrons") superam os portfólios sustentáveis ("verdes") no Brasil e em outros mercados emergentes.
+
+No âmbito brasileiro, embora @diniz_precificacao_2023 e @chagas_praticas_2024 confirmem que o fator estruturado a partir de critérios ESG agregados possui relevância estatística e melhora o poder explicativo dos retornos excedentes dos ativos, a validação de um prêmio de risco positivo, robusto e perene permanece inconclusiva na literatura sob diferentes recortes amostrais. Essa divergência de resultados empíricos pode estar intimamente ligada ao horizonte temporal das pesquisas conduzidas na realidade nacional.
+
+@pereira_environmental_2022 argumenta que a robustez econométrica e a significância estatística dos parâmetros estimados sob modelos de fatores em carteiras sustentáveis na B3 demandam janelas temporais analíticas específicas, sugerindo que análises focadas de forma inadequada tendem a apresentar ruídos conjunturais que obscurecem a real influência das variáveis ESG no valor intrínseco das firmas.
+
+Essa mesma falta de consenso sobre o desempenho financeiro de índices ESG é atestada internacionalmente em mercados equivalentes de economia emergente. Na Índia, por exemplo, a literatura é divergente: enquanto @kumar_revaluating_2025 identifica que o desempenho ESG tem um efeito positivo e estatisticamente significante nos retornos em excesso (indicando prêmio de risco), @hasan_exploring_2025 encontram alfas positivos, porém estatisticamente insignificantes. Evidências de neutralidade na geração de retornos anormais também são observadas na Turquia [@zehir_is_2020] e na China [@zhu_esg_2024], onde excluir ativos de baixa pontuação ESG protege o risco, mas não necessariamente alavanca os retornos excedentes ajustados.
+
+Ademais, existe uma lacuna específica associada ao nível de agregação informacional das métricas de sustentabilidade. A imensa maioria dos estudos nacionais foca em índices de mercado compostos, omitindo a análise das anomalias de preços geradas pela decomposição dos pilares $E$ (Ambiental), $S$ (Social) e $G$ (Governança) de forma independente. Como indicam @naffa_factor_2022 e @mulialim_how_2023, portfólios baseados em pontuações globais de ESG (escores médios) falham em capturar as dinâmicas de risco específicas de cada pilar, gerando sobreposições de efeitos (overlapping) que distorcem a realidade. Isso se acentua sob abordagens de triagem metodológica que afetam diretamente a estrutura do risco sistemático da carteira [@peng_systematic_2026], ou diante de instrumentos de transição ecológica [@lebelle_corporate_2020].
+
+## Revisão Sistemática
+
+Para compreender de forma profunda e estruturada o panorama científico que circunda o tema, é fundamental reportar-se ao estado da arte mapeado pela literatura recente. A esse respeito, o estudo de Nóbrega, Felipe e Araújo (2025) realiza uma ampla Revisão Sistemática da Literatura (RSL), analisando $87$ artigos publicados entre $2014$ e $2023$, focada na interseção entre os critérios ESG e as estratégias de diversificação e construção de portfólios.
+
+No plano conceitual, os autores resgatam que a formação de carteiras sob premissas socioambientais superou as barreiras das decisões de investimento puramente normativas ou de cunho ético (antigos Investimentos Socialmente Responsáveis – SRI), passando a integrar modelos matemáticos sofisticados de precificação de ativos e gestão de risco corporativo. A literatura moderna demonstra que as práticas de sustentabilidade influenciam o custo de capital das companhias, a volatilidade de mercado e a assimetria informacional.
+
+A principal contribuição de @nobrega_esg_2025 reside na proposição de uma estrutura conceitual integradora. Ao invés de conclusões unilaterais, a literatura científica é metodologicamente sistematizada pelos autores em oito eixos temáticos fundamentais de pesquisa:
+
+1. ESG como fator de risco e precificação de ativos: Investiga se as variáveis de sustentabilidade atuam como determinantes do retorno ajustado ao risco, desafiando ou complementando a suficiência dos modelos tradicionais multifatoriais (como Fama-French).
+2. ESG como preferência não financeira dos investidores: Aborda a modelagem da utilidade do investidor para além dos retornos estritamente pecuniários, avaliando a alocação de capital pautada por escolhas morais ou restrições ideológicas.
+3. ESG como sinal de qualidade organizacional e resiliência: Discute como a alta performance em critérios de sustentabilidade atua como um sinalizador robusto de excelência gerencial, capaz de blindar a firma contra contingências e choques exógenos.
+4. ESG como estilo de investimento e estratégia de carteira: Analisa a implementação de estratégias de alocação ativa e passiva na seleção de portfólios, incluindo técnicas de triagem (screening) e de seleção das melhores de cada classe (best-in-class).
+5. Incerteza e divergência nos ratings ESG: Examina as discrepâncias metodológicas de avaliação entre diferentes agências provedoras de dados, o que introduz ruído informacional na precificação e compromete a comparabilidade dos escores.
+6. Materialidade condicional por setor e heterogeneidade setorial dos efeitos ESG: Estuda a variação empírica do impacto financeiro do ESG, demonstrando que a relevância das práticas de sustentabilidade depende diretamente da natureza do setor econômico.
+7. ESG em mercados emergentes e conexão com os ODS: Investiga o papel da sustentabilidade corporativa em ecossistemas financeiros em desenvolvimento, marcados por fricções institucionais, e a sinergia com os Objetivos de Desenvolvimento Sustentável da ONU.
+8. ESG agregado vs. dimensões individuais (E, S, G): Avalia as discrepâncias que surgem ao aglutinar os pilares em um escore composto, defendendo a segregação analítica para capturar efeitos idiossincráticos e específicos na determinação de Alphas.
+
+O presente projeto de pesquisa está diretamente inserido e interage de forma sinérgica com a estrutura conceitual estabelecida por @nobrega_esg_2025. Especificamente, a presente investigação conecta-se de modo estrito ao eixo de ESG como fator de risco e precificação de ativos, ao testar a significância estatística do $\alpha$ de Jensen e as cargas fatoriais sob as especificações do CAPM, de Fama-French (três e cinco fatores) e de Carhart (quatro fatores) na B3. Complementarmente, dialoga com o eixo de ESG agregado vs. dimensões individuais (E, S, G), ao propor a decomposição analítica do desempenho entre o índice composto e os pilares individuais. Por fim, o projeto alinha-se ao eixo de ESG em mercados emergentes e conexão com os ODS, ao focar as análises no ecossistema acionário brasileiro.
+
+## Evolução Histórica dos Modelos de Precificação de Ativos
+
+O arcabouço teórico de apreçamento de ativos financeiros desenvolveu-se de forma incremental, guiado pela busca de formalização matemática para o risco e pela identificação de fontes de retornos sistemáticos.
+
+### Teoria de Seleção de Portfólios [@markowitz_portfolio_1952]
+
+O marco inicial dessa evolução remonta à Teoria da Seleção de Portfólios de @markowitz_portfolio_1952, que estabeleceu as fundações quantitativas para a análise de média-variância e o conceito de diversificação. @markowitz_portfolio_1952 demonstrou que o risco de um ativo individual não deve ser analisado isoladamente, mas sim por sua contribuição para o risco total de uma carteira, mensurado pela covariância com os demais ativos.
+
+O retorno esperado da carteira é dado por:
+
+$$E(R_p) = \sum_{i} w_i E(R_i)$$
+
+Condicionado à minimização da variância da carteira, expressa por:
+
+$$\sigma_p^2 = \sum_{i} \sum_{j} w_i w_j \sigma_{ij}$$
+
+Onde:
+
+- $w_i$ e $w_j$ representam as proporções de alocação nos ativos $i$ e $j$;
+
+- $\sigma_{ij}$ é a covariância entre os retornos dos ativos $i$ e $j$.
+
+Essa formulation matemática gerou o conjunto de Portfólios Eficientes que maximiza o retorno esperado para cada nível de risco elegível.
+
+### Capital Asset Pricing Model - CAPM [@sharpe_capital_1964]
+
+A partir dos conceitos fundamentais de eficiência de portfólio de Markowitz, @sharpe_capital_1964 - em paralelo com Lintner e Treynor - formulou o Capital Asset Pricing Model (CAPM), o primeiro modelo de equilíbrio geral de apreçamento de ativos de mercado. Conforme analisam @fama_capital_nodate, o CAPM simplifica o problema de Markowitz ao postular a existência de uma taxa livre de risco e estabelecer que todos os investidores detêm combinações de ativos livres de risco e da carteira de mercado.
+
+O modelo postula que o retorno esperado de um ativo acima da taxa livre de risco é determinado puramente pela sua exposição ao risco sistemático (não diversificável), medido pelo coeficiente Beta ($\beta$). A equação clássica do CAPM expressa-se como:
+
+$$E(R_i) = R_f + \beta_i [E(R_m) - R_f]$$
+
+Onde:
+
+- $E(R_i)$ é o retorno esperado do ativo $i$;
+
+- $R_f$ é o retorno do ativo livre de risco;
+
+- $E(R_m)$ é o retorno esperado da carteira de mercado;
+
+- $[E(R_m) - R_f]$ representa o prêmio pelo risco de mercado;
+
+- $\beta_i$ é a sensibilidade do ativo ao mercado, definida por $\beta_i = \frac{\text{Cov}(R_i, R_m)}{\text{Var}(R_m)}$.
+
+Apesar de sua elegância conceitual, @fama_capital_nodate destacam que o CAPM apresenta severas limitações em testes empíricos cruzados (cross-section). O modelo falha em explicar a variação dos retornos devido a anomalias de mercado, o que decorre do problema de hipótese conjunta (joint-hypothesis problem): é inviável testar o CAPM sem testar simultaneamente se a carteira de mercado adotada como proxy é de fato eficiente no sentido de Markowitz.
+
+### Arbitrage Pricing Theory - APT [@ross_arbitrage_1976]
+
+Como resposta a essas inconsistências empíricas, @ross_arbitrage_1976 propôs a Arbitrage Pricing Theory (APT). Diferentemente do CAPM, a APT não exige a identificação da carteira de mercado teórica de todos os ativos da economia nem assume preferências de utilidade específicas dos investidores.
+
+Fundamentada no princípio de ausência de arbitragem em mercados eficientes, a APT assume que o retorno esperado de um ativo pode ser modelado como uma função linear de múltiplos fatores de risco sistemáticos ou macroeconômicos não especificados a priori:
+
+$$E(R_i) = R_f + \beta_{i1} F_1 + \beta_{i2} F_2 + \dots + \beta_{ik} F_k$$
+
+Onde:
+
+- $F_j$ representa o prêmio de risco associado ao fator comum $j$;
+
+- $\beta_{ij}$ expressa a sensibilidade do ativo $i$ a esse fator específico.
+
+A APT forneceu a base matemática conceitual necessária para a transição definitiva dos modelos unifatoriais para os modelos multifatoriais baseados em dados empíricos de mercado.
+
+### Modelo de Três Fatores [@fama_common_1993]
+
+Dando operacionalidade empírica à estrutura multifatorial, @fama_common_1993 incorporaram ao prêmio de risco de mercado duas variáveis explicativas capturadas em anomalias empíricas históricas de retornos de ações: o tamanho da empresa (size) e a razão de valor contábil sobre valor de mercado (book-to-market).
+
+O modelo é expresso pela seguinte regressão em série temporal:
+
+$$R_{it} - R_{ft} = \alpha_i + b_i (R_{mt} - R_{ft}) + s_i \text{SMB}_t + h_i \text{HML}_t + \epsilon_{it}$$
+
+Onde:
+
+- $(R_{it} - R_{ft})$ representa o retorno excedente do ativo $i$ no período $t$;
+
+- $\alpha_i$ é o intercepto linear ($\alpha$ de Jensen), que mede o retorno anormal do ativo em relação ao modelo;
+
+- $\text{SMB}_t$ (Small Minus Big) representa o fator de tamanho (diferença de retorno entre carteiras de ações de menor e maior capitalização de mercado);
+
+- $\text{HML}_t$ (High Minus Low) representa o fator de valor (diferença de retorno entre carteiras de ações com alta e baixa relação de valor contábil sobre valor de mercado);
+
+- $b_i$, $s_i$ e $h_i$ indicam as cargas fatoriais de exposição ao mercado, tamanho e valor, respectivamente;
+
+- $\epsilon_{it}$ denota o termo de erro residual idiossincrático.
+
+### Modelo de Quatro Fatores [@carhart_persistence_1997]
+
+Posteriormente, @carhart_persistence_1997 expandiu o modelo de três fatores ao acrescentar um quarto fator estruturado a partir da anomalia de persistência de retornos de curto prazo identificada na literatura financeira, conhecida como efeito Momentum de Jegadeesh e Titman:
+
+$$R_{it} - R_{ft} = \alpha_i + b_i (R_{mt} - R_{ft}) + s_i \text{SMB}_t + h_i \text{HML}_t + w_i \text{WML}_t + \epsilon_{it}$$
+
+Onde:
+
+- $\text{WML}_t$ (Winners Minus Losers ou $\text{UMD}$ - Up Minus Down) mensura o fator de momentum (diferença de retorno ajustada entre portfólios compostos pelas ações com maiores retornos acumulados passados e as com piores performances);
+
+- $w_i$ é a carga fatorial de sensibilidade do ativo a esse fator de momentum.
+
+### Modelo de Cinco Fatores [@fama_five-factor_2015]
+
+Visando capturar a variabilidade de retornos que o modelo de três fatores falhava em explicar, @fama_five-factor_2015 reformularam sua estrutura teórica original. Com base no modelo de desconto de dividendos, os autores adicionaram dois fatores fundamentais de qualidade de finanças corporativas: lucratividade e investimento.
+
+A regressão de cinco fatores é delineada como:
+
+$$R_{it} - R_{ft} = \alpha_i + b_i (R_{mt} - R_{ft}) + s_i \text{SMB}_t + h_i \text{HML}_t + r_i \text{RMW}_t + c_i \text{CMA}_t + \epsilon_{it}$$
+
+Onde:
+
+- $\text{RMW}_t$ (Robust Minus Weak) constitui o fator de lucratividade (diferença de retornos entre carteiras compostas por empresas com lucratividade operacional robusta e fraca);
+
+- $\text{CMA}_t$ (Conservative Minus Aggressive) reflete o fator de investimento (diferença de retornos entre portfólios de empresas com baixo crescimento de investimentos e alto nível de investimento);
+
+- $r_i$ e $c_i$ expressam, respectivamente, a exposição dos ativos aos fatores de lucratividade e investimento.
+
+### Síntese dos Modelos de Precificação de Ativos
+
+A análise incremental dessa evolução histórica revela o processo sistemático de incorporação de novas variáveis explicativas a cada nova geração de modelos financeiros, como apresentado na @tbl-sintese_modelos:
+
+| Modelo | Autor (Ano) | Variável Incremental | Objetivo da Incorporação |
+|:---|:---|:---|:---|
+| Markowitz | @markowitz_portfolio_1952 | Covariância entre ativos ($\sigma_{ij}$) | Quantificação matemática da diversificação e risco de portfólio. |
+| CAPM | @sharpe_capital_1964 | Taxa livre de risco ($R_f$) e Beta ($\beta_i$) | Estabelecer o equilíbrio geral através da exposição ao risco de mercado. |
+| APT | @ross_arbitrage_1976 | Múltiplos fatores arbitrários ($F_k$) | Flexibilizar a unifatorialidade do CAPM sem exigir a carteira de mercado teórica. |
+| Três Fatores | @fama_common_1993 | Fatores microeconômicos $SMB$ e $HML$ | Capturar prêmios de risco associados a tamanho e valor das firmas. |
+| Carhart | @carhart_persistence_1997 | Fator técnico $WML$ | Incorporar anomalias comportamentais de momentum de curto prazo. |
+| Cinco Fatores | @fama_five-factor_2015 | Fatores contábeis $RMW$ e $CMA$ | Capturar o prêmio de qualidade, reduzindo redundâncias como o $HML$. |
+
+:Síntese dos Modelos de Precificação {#tbl-sintese_modelos}
+
+## Comparativo com a pesquisa de @pereira_environmental_2022 e @diniz_precificacao_2023
+
+A presente pesquisa insere-se na linha de investigação empírica sobre a precificação de fatores ESG na B3, estabelecendo diálogos fundamentais com os trabalhos seminais de @pereira_environmental_2022 e @diniz_precificacao_2023. Embora compartilhem o mesmo ambiente de análise - o mercado acionário brasileiro - e o objetivo de verificar a existência de retornos anormais em portfólios sustentáveis, este estudo se diferencia em escopo, metodologia e profundidade analítica.
+
+Todos os três estudos adotam o arcabouço da teoria multifatorial de Fama-French como base de controle econométrico para a extração do Alpha de Jensen. @pereira_environmental_2022 e @diniz_precificacao_2023, assim como esta pesquisa, reconhecem a necessidade de controlar fatores tradicionais (como tamanho, valor e, em alguns casos, momentum) para isolar o prêmio atribuível especificamente aos critérios ESG, evitando conclusões espúrias que poderiam advir de modelos unifatoriais como o CAPM.
+
+No entanto, @pereira_environmental_2022 e @diniz_precificacao_2023 focam predominantemente no índice composto (geralmente baseado no ISE-B3 ou em ratings ESG agregados). Esta pesquisa avança ao propor uma análise desagregada por pilares (Ambiental, Social e de Governança). Com base nas discussões de @mulialim_how_2023, esta abordagem permite identificar qual dimensão específica da sustentabilidade impulsiona o desempenho - ou gera custos - no contexto brasileiro, contornando o mascaramento de efeitos que ocorre em índices compostos.
+
+Além disso, @pereira_environmental_2022 concentra-se predominantemente na estrutura clássica de Fama-French, visando identificar se a inclusão de variáveis ESG altera a significância dos fatores tradicionais. @diniz_precificacao_2023 aprofunda a discussão ao testar a robustez do "fator verde" em modelos multifatoriais, buscando provar sua relevância como um fator de risco independente. Esta pesquisa amplia esse leque comparativo ao rodar de forma concorrente e sequencial quatro modelos de apreçamento distintos (CAPM, FF3, FF5 e Carhart 4 fatores), conforme sugerido pela literatura sobre sensibilidade ao modelo (hipótese $H_4$), para verificar se o Alpha de Jensen se mantém resiliente ou se é absorvido pela complexidade fatorial.
+
+Enquanto @pereira_environmental_2022 e @diniz_precificacao_2023 mantêm-se em uma perspectiva predominantemente acadêmica e de análise ex-post, este projeto se diferencia pela natureza de suas entregas. Além do artigo científico, propõe o desenvolvimento de uma plataforma tecnológica (produto técnico) de simulação, permitindo que a pesquisa tenha utilidade prática imediata para gestores e investidores, transpondo os resultados empíricos para um ambiente de backtesting interativo.
+
+Ou seja, enquanto @pereira_environmental_2022 e @diniz_precificacao_2023 estabeleceram as bases sobre a precificação de ativos sustentáveis no Brasil, este projeto busca refinar a compreensão sobre essa relação através de uma lente analítica mais granular (pilares segregados) e um controle econométrico mais robusto e comparativo entre múltiplos modelos de fatores.
 
 
 # Metodologia {#sec-metodologia}
@@ -152,20 +365,30 @@ Escreva abaixo o texto do projeto de pesquisa.
 
 ## Produto Bibliográfico {#sec-artigo}
 
-
+Como resultado do esforço científico deste projeto de pesquisa, planeja-se a elaboração de um artigo de natureza empírico-quantitativa intitulado "Análise de Desempenho de Carteiras baseadas no Índice ESG na B3: Uma Abordagem Comparativa via Modelos de Fatores". O documento apresentará o rigor acadêmico necessário para submissão a periódicos científicos nacionais de elevado impacto na área de Administração e Finanças.
 
 ## Produto Técnico/Tecnológico {#sec-tecnico}
 
+Sob o aspecto de transferência de conhecimento aplicado à sociedade e ao mercado de capitais brasileiro, o projeto resultará no desenvolvimento de uma plataforma tecnológica interativa (dashboard web). Este produto técnico fornecerá ao usuário as seguintes funcionalidades:
 
+* Decomposição de Fatores em Tempo Real: Mapeamento dinâmico das cargas fatoriais de portfólios sustentáveis e carteiras personalizadas criadas pelo usuário, estimadas com base nos modelos CAPM, Fama-French e Carhart.
+
+* Métricas de Desempenho e Risco: Visualização comparativa do Alpha de Jensen, Índice de Sharpe, bem como o Value-at-Risk (VaR) e o Conditional Value-at-Risk (CVaR) da carteira agregada e dos pilares.
+
+* Mecanismo de Simulação Histórica (Backtesting): Interface gráfica e intuitiva que possibilitará a investidores individuais, consultores financeiros e gestores de recursos simular o comportamento de ativos com diferentes scores ESG (compostos ou segregados por pilar) frente a cenários históricos de turbulência econômica no Brasil.
 
 ## Impactos Esperados {#sec-impactos}
 
+Espera-se que este estudo proporcione contribuições significativas em múltiplas dimensões do mercado de capitais brasileiro. No plano acadêmico, o projeto almeja consolidar o entendimento teórico sobre a relação entre sustentabilidade corporativa e a precificação de ativos em economias em desenvolvimento, gerando dados empíricos robustos para subsidiar futuras investigações.
+No âmbito de mercado, a pesquisa visa fornecer ferramentas analíticas e fundamentação científica para que gestores de portfólios estruturem estratégias de investimento mais eficazes na gestão de riscos de mercado, estimulando a canalização eficiente de fluxos de capital de longo prazo para companhias brasileiras comprometidas com as melhores práticas ambientais, sociais e de governança.
 
 
 
 
 
 # Cronograma {#sec-cronograma}
+
+<!--
 
 Substitua a tabela abaixo pelo cronograma do seu projeto.
 
@@ -178,7 +401,7 @@ Substitua a tabela abaixo pelo cronograma do seu projeto.
 | Redação dos resultados | abr./2027 | jun./2027 |
 | Ajustes finais e preparação da defesa | jul./2027 | ago./2027 |
 
-
+-->
 
 
 
