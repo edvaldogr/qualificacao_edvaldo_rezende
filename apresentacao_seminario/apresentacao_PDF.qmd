@@ -3,7 +3,7 @@ title: "Análise de desempenho de Carteiras sob a ótica ESG na B3"
 subtitle: "Uma abordagem via Modelo de 5 fatores de Fama-French"
 author: "Edvaldo Garcia Rezende"
 institute: "IFMG - Mestrado Profissional em Administração"
-date: "2026-04-23"
+date: "2026-05-21"
 date-format: "DD/MM/YYYY"
 lang: pt
 format: 
@@ -66,85 +66,116 @@ csl: apa-7-edicao.csl
 
 ---
 
-## Contexto da Pesquisa
-
-A dissertação de @diniz_precificacao_2023, Precificação de fatores ESG no mercado de ações brasileiro: uma abordagem sob o escopo dos modelos de Fama-French, analisou se o desempenho nas dimensões ESG representa um fator de risco significativo na precificação de ações no Brasil.
-
-Segundo @diniz_precificacao_2023, embora mercados desenvolvidos possuam literatura consolidada, o impacto do desempenho ESG na B3 ainda apresenta uma lacuna de compreensão empírica. 
-
-**Esta pesquisa busca avançar a partir dessa provocação.**
-
----
-
 ## Problema de Pesquisa
 
 \begin{block}{Problema de Pesquisa}
-"A estratégia de investimento em carteiras com altos scores ESG na B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, mesmo após o controle pelos 5 fatores do modelo de Fama-French?"
+"A estratégia de investimento em carteiras com altos scores ESG na B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, após o controle de modelos de fatores (CAPM; Fama-French 3 e 5 fatores; Carhart 4 fatores), quando analisada tanto de forma agregada quanto segregada por seus pilares individuais?"
 \end{block}
 
 ---
 
 ## Objetivo Geral da Pesquisa
 
-Analisar se o desempenho superior de carteiras ESG na B3 persiste como um Alpha de Jensen ($\alpha$) estatisticamente significativo após o controle pelos 5 fatores de **Fama-French** [@fama_five-factor_2015].
+Analisar se o investimento em carteiras com altos scores ESG na B3 resulta em Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo, de forma agregada e desagregada por pilar (E, S e G), utilizando como controle os modelos de apreçamento de ativos CAPM, Fama-French de três e cinco fatores, e o modelo de quatro fatores de Carhart.
 
-
----
-
-
-## Objetivos Específicos (Produtos)
-
-- Produto Bibliográfico (Artigo): Testar a robustez estatística do Alpha de Jensen em portfólios ESG, controlando os cinco fatores de risco sistêmico, visando publicação em periódico.
 
 ---
 
 ## Objetivos Específicos (Produtos)
 
-- Produto Técnico (Plataforma): Desenvolver uma ferramenta tecnológica interativa que realize a decomposição de fatores e análise de desempenho de carteiras para o investidor brasileiro, integrando métricas ESG e financeiras.
+- Produto Bibliográfico (Artigo Científico):Testar a significância estatística do Alpha de Jensen em portfólios estruturados com base no Índice ESG da B3 de forma agregada e segregada (pilares E, S e G isoladamente), empregando os fatores de risco sistemático disponibilizados pelo Centro de Pesquisas em Finanças da USP (NEFIN), com o intuito de comparar a aderência e o desempenho relativo entre os modelos CAPM, Fama-French (três e cinco fatores) e Carhart (quatro fatores).
 
 ---
 
-## Metodologia: Modelo de 5 Fatores
+## Objetivos Específicos (Produtos)
 
-Para isolar o efeito ESG, utilizaremos a regressão de séries temporais [@fama_five-factor_2015]:
-
-$$
-\begin{aligned}
-(R_{it} - R_{ft}) &= \alpha_i + b_i(R_{mt} - R_{ft}) + s_i SMB_t + h_i HML_t \\
-&+ r_i RMW_t + c_i CMA_t + e_{it}
-\end{aligned}
-$$
+- Produto Técnico (Plataforma Tecnológica): Desenvolver uma ferramenta interativa e de livre acesso que execute a decomposição de fatores e a avaliação de desempenho de carteiras de ações sob a perspectiva do investidor nacional, viabilizando a simulação do comportamento histórico do Índice ESG (e de seus componentes individuais) sob diferentes premissas de modelos de risco.
 
 ---
 
-## Metodologia: Modelo de 5 Fatores
+## Justificativa 
 
-| Sigla | Fator | Descrição |
-|:---:|:---|:---|
-| **$R_m - R_f$** | Mercado | Prêmio de risco de mercado |
-| **SMB** | Tamanho | *Small Minus Big* (Capitalização) |
-| **HML** | Valor | *High Minus Low* (Book-to-Market) |
-| **RMW** | Rentabilidade | *Robust Minus Weak* (Lucratividade) |
-| **CMA** | Investimento | *Conservative Minus Aggressive* |
+O estudo justifica-se pela necessidade de compreender o papel dos investimentos sustentáveis no mercado de capitais brasileiro à luz da teoria moderna de carteiras. A literatura aponta que variáveis ESG podem atuar como fatores de risco, sinalizadores de governança ou reflexo de preferências de gestão [@nobrega_esg_2025]. 
 
 ---
 
-## Metodologia: Modelo de 5 Fatores
+## Justificativa 
 
-* **$R_{it} - R_{ft}$:** Retorno excedente da carteira ESG;
-* **$\alpha_i$:** Alpha de Jensen - Retorno anormal;
-* **$b_i, s_i, h_i, r_i, c_i$:** Coeficientes de sensibilidade dos 5 fatores;
-* **$e_{it}$:** Termo de erro residual.
+Evidências mostram que a inclusão de fatores ambientais e sociais melhora a acurácia dos modelos de apreçamento, como no caso do “fator verde” incorporado ao modelo Fama-French na B3 [@diniz_precificacao_2023; @chagas_praticas_2024]. Pesquisas internacionais revelam que carteiras sustentáveis reduzem risco sistemático, mas não geram retornos excedentes robustos [@peng_systematic_2026], e que os efeitos variam conforme o pilar ESG analisado [@naffa_factor_2022; @mulialim_how_2023]. 
 
 ---
 
-## Enfoque Teórico: Nóbrega et al. (2025)
+## Justificativa
+
+Em mercados emergentes, os resultados são divergentes: na Índia, há evidências de prêmio de risco [@kumar_revaluating_2025], mas também Alphas insignificantes [@hasan_exploring_2025]; na China, fatores tradicionais explicam melhor os retornos [@zhu_esg_2024]. Além disso, iniciativas ambientais podem gerar reações negativas de mercado no curto prazo [@lebelle_corporate_2020]. 
+
+---
+
+## Justificativa 
+
+No Brasil, a análise diferenciada entre portfólios agregados e segregados é crucial para entender a sensibilidade dos fatores ESG e apoiar políticas de sustentabilidade [@diniz_precificacao_2023].
+
+---
+
+## Hipóteses da Pesquisa
+
+- $H_1$ (Relevância de Retorno): Existe uma diferença estatisticamente significativa entre os retornos das carteiras que compõem o Índice ESG e o benchmark tradicional de mercado representado pelo índice IBOVESPA. 
+
+---
+
+## Hipóteses da Pesquisa
+
+- $H_2$ (Retorno Anormal): O Índice ESG da B3 gera um Alpha de Jensen ($\alpha$) positivo e estatisticamente significativo mesmo após o controle pelos fatores de risco sistemático do modelo de 4 fatores de Carhart e dos modelos de 3 e 5 fatores de Fama-French.
+
+---
+
+## Hipóteses da Pesquisa
+
+- $H_3$ (Variabilidade Setorial): O retorno anormal (Alpha de Jensen) gerado pela carteira ESG apresenta variabilidade estatística significativa quando as empresas integrantes são segregadas de acordo com os seus respectivos setores de atuação econômica. 
+
+---
+
+## Hipóteses da Pesquisa
+
+- $H_4$ (Sensibilidade ao Modelo): A significância estatística e a magnitude do Alpha do Índice ESG alteram-se sistematicamente conforme a complexidade e a estrutura dimensional do modelo de apreçamento empregado (comparação sequencial entre CAPM, Fama-French 3 e 5 fatores, e Carhart 4 fatores).
+
+---
+
+## Hipóteses da Pesquisa
+
+- $H_5$ (Efeito da Segregação de Pilares): O desempenho ajustado ao risco (Alpha de Jensen) e a sensibilidade aos fatores de apreçamento variam significativamente quando a carteira ESG é analisada por meio de seus pilares segregados (Ambiental, Social e de Governança corporativa de forma isolada) em comparação com a carteira avaliada pelo índice ESG composto e unificado. 
+
+---
+
+## Lacunas de Pesquisa
+
+O estudo busca preencher a lacuna existente na literatura ao comparar sistematicamente modelos de apreçamento de ativos (CAPM, Fama-French e Carhart) aplicados ao Índice ESG da B3 em horizonte decenal (2016–2026).
+
+- Persiste ausência de consenso sobre a consistência e persistência dos retornos anormais em mercados emergentes, especialmente no Brasil [@nobrega_esg_2025; @casartelli_esg_2025].
+
+---
+
+## Lacunas de Pesquisa
+
+- A maioria dos estudos utiliza índices agregados, omitindo a análise independente dos pilares E, S e G, o que pode distorcer os riscos específicos [@naffa_factor_2022; @mulialim_how_2023].  
+
+- Resultados nacionais indicam relevância estatística do fator ESG, mas não confirmam prêmio de risco robusto e duradouro [@diniz_precificacao_2023; @chagas_praticas_2024], em parte devido ao recorte temporal das análises [@pereira_environmental_2022].
+
+---
+
+## Lacunas de Pesquisa
+
+- Internacionalmente, há divergências: na Índia, efeitos positivos [@kumar_revaluating_2025] contrastam com alfas insignificantes [@hasan_exploring_2025], na Turquia e China prevalece neutralidade [@zehir_is_2020, @zhu_esg_2024].
+  
+---
+
+## Revisão Sistemática: @nobrega_esg_2025
 
 O artigo "ESG na formação de Carteiras: o que revela a literatura científica?" de @nobrega_esg_2025 realizou uma Revisão Sistemática da Literatura (87 artigos entre 2014-2023), identificando **8 Eixos Temáticos**.
 
 ---
 
-## Enfoque Teórico: Nóbrega et al. (2025) (1/2)
+## Revisão Sistemática: @nobrega_esg_2025 (1/2)
 
 \begin{table}[]
 \begin{tabular}{cl}
@@ -158,7 +189,7 @@ O artigo "ESG na formação de Carteiras: o que revela a literatura científica?
 
 ---
 
-## Enfoque Teórico: Nóbrega et al. (2025) (2/2)
+## Revisão Sistemática: @nobrega_esg_2025 (2/2)
 
 \begin{table}[]
 \begin{tabularx}{\textwidth}{c X}
@@ -172,7 +203,7 @@ O artigo "ESG na formação de Carteiras: o que revela a literatura científica?
 
 ---
 
-## Enfoque Teórico: Aplicação
+## Revisão Sistemática: @nobrega_esg_2025 - Aplicação
 
 O projeto situa-se na interseção de três eixos específicos:
 
@@ -184,6 +215,120 @@ O projeto situa-se na interseção de três eixos específicos:
 \textbf{8: Agregado vs. Dimensões} & \textbf{Investigação do impacto do score total e isolamento de cada dimensão (E, S, G).} \\ \hline
 \end{tabularx}
 \end{table}
+
+---
+
+## Evolução Histórica dos Modelos de Precificação de Ativos
+
+---
+
+### Teoria de Seleção de Portfólios [@markowitz_portfolio_1952]
+
+O retorno esperado da carteira é dado por:
+
+$$E(R_p) = \sum_{i} w_i E(R_i)$$
+
+Condicionado à minimização da variância da carteira, expressa por:
+
+$$\sigma_p^2 = \sum_{i} \sum_{j} w_i w_j \sigma_{ij}$$
+
+
+---
+
+### Capital Asset Pricing Model - CAPM [@sharpe_capital_1964]
+
+O retorno esperado de um ativo é determinado puramente pela sua exposição ao risco sistemático (não diversificável), medido pelo coeficiente Beta ($\beta$), dado por:
+
+$$E(R_i) = R_f + \beta_i [E(R_m) - R_f]$$
+
+- $E(R_i)$ é o retorno esperado do ativo $i$;
+
+- $\beta_i$ é a sensibilidade do ativo ao mercado, definida por: $\beta_i = \frac{\text{Cov}(R_i, R_m)}{\text{Var}(R_m)}$.
+
+---
+
+### Arbitrage Pricing Theory - APT [@ross_arbitrage_1976]
+
+A Arbitrage Pricing Theory (APT) proposta por @ross_arbitrage_1976 assume que o retorno esperado de um ativo pode ser modelado como uma função linear de múltiplos fatores de risco sistemáticos ou macroeconômicos não especificados a priori:
+
+$$E(R_i) = R_f + \beta_{i1} F_1 + \beta_{i2} F_2 + \dots + \beta_{ik} F_k$$
+
+---
+
+Onde:
+
+* $F_j$ representa o prêmio de risco associado ao fator comum $j$;
+
+* $\beta_{ij}$ expressa a sensibilidade do ativo $i$ a esse fator específico.
+
+---
+
+### Modelo de Três Fatores [@fama_common_1993]
+
+@fama_common_1993 incorporaram ao prêmio de risco de mercado duas variáveis explicativas capturadas em anomalias empíricas históricas de retornos de ações: o tamanho da empresa (size) e a razão de valor contábil sobre valor de mercado (book-to-market), definida por:
+
+$$R_{it} - R_{ft} = \alpha_i + b_i (R_{mt} - R_{ft}) + s_i \text{SMB}_t + h_i \text{HML}_t + \epsilon_{it}$$
+
+---
+
+Onde: 
+
+- $\text{SMB}_t$ (Small Minus Big) representa o fator de tamanho (diferença de retorno entre carteiras de ações de menor e maior capitalização de mercado);
+
+- $\text{HML}_t$ (High Minus Low) representa o fator de valor (diferença de retorno entre carteiras de ações com alta e baixa relação de valor contábil sobre valor de mercado);
+
+---
+
+### Modelo de Quatro Fatores [@carhart_persistence_1997]
+
+@carhart_persistence_1997 expandiu o modelo de três fatores ao acrescentar um quarto fator conhecido como efeito Momentum de Jegadeesh e Titman:
+
+$$ R_{it} - R_{ft} = \alpha_i + b_i (R_{mt} - R_{ft}) + s_i \text{SMB}_t + h_i \text{HML}_t + w_i \text{WML}_t + \epsilon_{it} $$
+
+---
+
+Onde: 
+
+- $\text{WML}_t$ (Winners Minus Losers ou $\text{UMD}$ - Up Minus Down) mensura o fator de momentum (diferença de retorno ajustada entre portfólios compostos pelas ações com maiores retornos acumulados passados e as com piores performances);
+
+- $w_i$ é a carga fatorial de sensibilidade do ativo a esse fator de momentum.
+
+---
+
+### Modelo de Cinco Fatores [@fama_five-factor_2015]
+
+@fama_five-factor_2015 reformularam sua teoria originaladicionando dois fatores: lucratividade e investimento. A regressão de cinco fatores é dada por:
+
+$$R_{it} - R_{ft} = \alpha_i + b_i (R_{mt} - R_{ft}) + s_i \text{SMB}_t + h_i \text{HML}_t + r_i \text{RMW}_t + c_i \text{CMA}_t + \epsilon_{it}$$
+
+---
+
+Onde:
+
+- $\text{RMW}_t$ (Robust Minus Weak) constitui o fator de lucratividade (diferença de retornos entre carteiras compostas por empresas com lucratividade operacional robusta e fraca);
+
+- $\text{CMA}_t$ (Conservative Minus Aggressive) reflete o fator de investimento (diferença de retornos entre portfólios de empresas com baixo crescimento de investimentos e alto nível de investimento).
+
+
+---
+
+### Síntese dos Modelos
+
+\begin{table}[]
+\begin{tabularx}{\textwidth}{c X X}
+\textbf{Modelo} & \textbf{Autor (Ano)} & \textbf{Variável Incremental} \\ \hline
+\textbf{Markowitz} & \textbf{@markowitz_portfolio_1952} & \textbf{Covariância entre ativos ($\sigma_{ij}$)} \\
+\textbf{CAPM} & \textbf{@sharpe_capital_1964} & \textbf{Taxa livre de risco ($R_f$) e Beta ($\beta_i$) (risco sistemático)} \\
+\textbf{APT} & \textbf{@ross_arbitrage_1976} & \textbf{Múltiplos fatores arbitrários ($F_k$)} \\
+\textbf{FF-3 Fatores} & \textbf{@fama_common_1993} & \textbf{Fatores microeconômicos $SMB$ (tamanho) e $HML$ (valor)} \\ \hline
+\textbf{Carhart} & \textbf{ @carhart_persistence_1997} & \textbf{Fator técnico $WML$ (momentum)} \\ \hline
+\textbf{FF-5 Fatores} & \textbf{@fama_five-factor_2015} & \textbf{Fatores contábeis $RMW$ (lucratividade) e $CMA$ (investimento)} \\ \hline
+\end{tabularx}
+\end{table}
+
+---
+
+
 
 ---
 
